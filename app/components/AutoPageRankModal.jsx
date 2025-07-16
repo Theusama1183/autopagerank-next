@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import PricingTabs from "./PricingTabs";
 
 export default function AutoPageRankModal({ onClose }) {
   return (
@@ -59,80 +60,8 @@ export default function AutoPageRankModal({ onClose }) {
           </div>
 
           {/* Right Section */}
-          <div className="w-full md:w-1/2 bg-white px-6 py-10">
-            <h3 className="text-4xl font-bold mb-6">Pricing Plans</h3>
-
-            <div className="border border-[#338CF5] rounded-[15px] mb-6 ">
-              <div className="text-center p-5 bg-[#338CF5] rounded-t-[15px]">
-                <p className="text-white font-semibold text-xl">
-                  $0.00 Free For First 7 Days
-                </p>
-              </div>
-              <div className="p-6 mt-5">
-                <h4 className="text-2xl font-bold mb-1 text-center">Trial</h4>
-                <h3 className="text-6xl font-bold text-[#18191F] mb-4 text-center">
-                  $0.00{" "}
-                  <span className="text-xl font-light text-[#18191F99]">
-                    / for first 7 days
-                  </span>
-                </h3>
-              </div>
-
-              <div className="p-6 bg-[#FCFCFC] mt-6 rounded-b-[15px]">
-                <ul className="text-lg text-[#18191F] space-y-1 mb-6">
-                  <li className="flex gap-2.5 mt-3">
-                    <svg
-                      className="mt-2"
-                      width="28"
-                      height="16"
-                      viewBox="0 0 28 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.5025 10.1999L15.2675 11.9649L25.8494 1.38288L27.6173 3.15064L15.2675 15.5004L7.3125 7.54538L9.08026 5.77763L11.7362 8.43363L13.5025 10.1999ZM13.5046 6.66525L19.6954 0.474365L21.4583 2.23722L15.2675 8.428L13.5046 6.66525ZM9.97123 13.7341L8.20495 15.5004L0.25 7.54538L2.01776 5.77763L3.78404 7.544L3.78255 7.54538L9.97123 13.7341Z"
-                        fill="#338CF5"
-                      />
-                    </svg>
-                    Free trial is 7 days free then $97 per month
-                  </li>
-                  <li className="flex gap-2.5 mt-3">
-                    <svg
-                      className="mt-2"
-                      width="28"
-                      height="16"
-                      viewBox="0 0 28 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.5025 10.1999L15.2675 11.9649L25.8494 1.38288L27.6173 3.15064L15.2675 15.5004L7.3125 7.54538L9.08026 5.77763L11.7362 8.43363L13.5025 10.1999ZM13.5046 6.66525L19.6954 0.474365L21.4583 2.23722L15.2675 8.428L13.5046 6.66525ZM9.97123 13.7341L8.20495 15.5004L0.25 7.54538L2.01776 5.77763L3.78404 7.544L3.78255 7.54538L9.97123 13.7341Z"
-                        fill="#338CF5"
-                      />
-                    </svg>
-                    300 articles / 200 indexes daily
-                  </li>
-                </ul>
-                <a href="#" target="_blank">
-                  <button className="w-full bg-[#2F80ED] hover:bg-[#1669d8] text-white py-2 rounded-lg font-semibold transition-all">
-                    Sign Up
-                  </button>
-                </a>
-              </div>
-            </div>
-
-            <div className="flex flex-col space-y-3">
-              <div className="w-full border text-center border-[#338CF566] py-4 rounded-[10px] font-medium">
-                Weekly Package
-              </div>
-              <div className="w-full border text-center border-[#338CF566] py-4 rounded-[10px] font-medium">
-                Monthly Package
-              </div>
-              <div className="w-full border text-center border-[#338CF566] py-4 rounded-[10px] font-medium">
-                Unlimited Package
-              </div>
-            </div>
-          </div>
+          <PricingTabs />
+          
         </div>
       </div>
     </div>
