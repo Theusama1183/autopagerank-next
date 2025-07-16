@@ -12,10 +12,12 @@ export default function LoginPage() {
       centeredSlides: true,
       slidesPerView: 2.5,
       spaceBetween: 20,
-      // autoplay: {
-      //   delay: 2500,
-      //   disableOnInteraction: false,
-      // },
+      slidesPerGroup: 2,
+      groupSlidesPerGroup: 2,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -27,7 +29,7 @@ export default function LoginPage() {
     <div className="flex flex-col lg:flex-row h-auto lg:h-screen font-[Montserrat]">
       {/* Left Panel */}
       <div className="w-full lg:w-1/2 flex justify-center items-center bg-white p-6 lg:p-0">
-        <div className="bg-white rounded-[20px] shadow-[0px_4px_50px_0px_#338CF51A] text-center p-10 max-w-[400px] w-full">
+        <div className="bg-white rounded-[20px] shadow-[0px_4px_50px_0px_#338CF51A] text-center p-10 max-w-[500px] w-full">
           <img src="/img/logo.png" alt="logo" className="mx-auto mb-6" />
 
           <h1 className="text-[28px] lg:text-[40px] font-bold text-[#18191F] mb-2">
