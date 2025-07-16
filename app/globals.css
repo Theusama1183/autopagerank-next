@@ -50,6 +50,10 @@ body {
   height: 320px !important;
 }
 
+.swiper-slide img {
+  border-radius: 15px;
+}
+ 
 .swiper-slide.swiper-slide-active img {
     height: 230px !important;
     object-fit: fill;

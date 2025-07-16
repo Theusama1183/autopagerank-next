@@ -1,33 +1,46 @@
-// components/LoginPage.jsx
-
-'use client';
-import { useEffect } from 'react';
-import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
+"use client";
+import { useEffect, useState } from "react";
+import Swiper from "swiper/bundle";
+import "swiper/css/bundle";
 
 export default function LoginPage() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const descriptions = [
+    "HeroicShorts.com - From 0 To 300 Keywords Ranked In 3 Months",
+    "AutoPageRank.com - From 0 To 1,200 Keywords Ranked In 3 Months",
+    "StealthAgents.com - Over 541,000+ Organic Clicks Generated",
+  ];
+
   useEffect(() => {
-    new Swiper('.swiper', {
+    const swiperInstance = new Swiper(".swiper", {
       loop: true,
       centeredSlides: true,
       slidesPerView: 2.5,
       spaceBetween: 20,
       slidesPerGroup: 2,
-      groupSlidesPerGroup: 2,
       autoplay: {
         delay: 2500,
         disableOnInteraction: false,
       },
       pagination: {
-        el: '.swiper-pagination',
+        el: ".swiper-pagination",
         clickable: true,
       },
+      on: {
+        slideChange: function () {
+          // Adjusted index for looped mode
+          const realIndex = this.realIndex;
+          setActiveIndex(realIndex % descriptions.length);
+        },
+      },
     });
+
+    return () => swiperInstance.destroy();
   }, []);
 
   return (
     <div className="flex flex-col lg:flex-row h-auto lg:h-screen font-[Montserrat]">
-      {/* Left Panel */}
       <div className="w-full lg:w-1/2 flex justify-center items-center bg-white p-6 lg:p-0">
         <div className="bg-white rounded-[20px] shadow-[0px_4px_50px_0px_#338CF51A] text-center p-10 max-w-[500px] w-full">
           <img src="/img/logo.png" alt="logo" className="mx-auto mb-6" />
@@ -49,15 +62,15 @@ export default function LoginPage() {
           </button>
 
           <p className="text-[#18191F] text-sm lg:text-base font-medium leading-[28px]">
-            You also agree to our{' '}
+            You also agree to our{" "}
             <a href="#" className="text-[#0066FF]">
               Terms Conditions
-            </a>{' '}
-            and{' '}
+            </a>{" "}
+            and{" "}
             <a href="#" className="text-[#0066FF]">
               Privacy Policy
             </a>
-            . Already a member?{' '}
+            . Already a member?{" "}
             <a href="#" className="text-[#0066FF]">
               Sign in
             </a>
@@ -74,48 +87,18 @@ export default function LoginPage() {
         {/* Swiper */}
         <div className="swiper w-full max-w-full py-2 lg:py-2 mb-5">
           <div className="swiper-wrapper scale-[1.0] lg:scale-[1.3] flex items-center">
-            <div className="swiper-slide">
-              <img
-                src="img/slide-1.png"
-                alt="Slide 1"
-              />
-            </div>
-            <div className="swiper-slide">
-              <img
-                src="img/slide-2.png"
-                alt="Slide 2"
-              />
-            </div>
-            <div className="swiper-slide">
-              <img
-                src="img/slide-3.png"
-                alt="Slide 3"
-              />
-            </div>
-            <div className="swiper-slide">
-              <img
-                src="img/slide-1.png"
-                alt="Slide 1"
-              />
-            </div>
-            <div className="swiper-slide">
-              <img
-                src="img/slide-2.png"
-                alt="Slide 2"
-              />
-            </div>
-            <div className="swiper-slide">
-              <img
-                src="img/slide-3.png"
-                alt="Slide 3"
-              />
-            </div>
+            {[1, 2, 3, 1, 2, 3].map((num, idx) => (
+              <div key={idx} className="swiper-slide">
+                <img src={`img/slide-${num}.png`} alt={`Slide ${num}`} />
+              </div>
+            ))}
           </div>
           <div className="swiper-pagination mt-2 !bottom-[-10px]" />
         </div>
 
-        <p className="text-[14px] sm:text-[16px] lg:text-[20px] mb-3 px-2">
-          HeroicShorts.com – From 0 to 300 Keywords Ranked in 3 Months
+        {/* Dynamic description here */}
+        <p className="text-[14px] sm:text-[16px] lg:text-[20px] mb-3 px-2 max-w-[90%]">
+          {descriptions[activeIndex]}
         </p>
 
         <img src="/img/reviews.png" alt="reviews" className="mt-3 max-w-full" />
@@ -123,4 +106,3 @@ export default function LoginPage() {
     </div>
   );
 }
-
