@@ -70,6 +70,9 @@ body {
 div#swiper-wrapper-10801010fd1cc410a40e {
     padding-bottom: 40px !important;
 }
+.swiper.w-full.max-w-full.py-2.lg\:py-2.mb-5.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
+    padding-bottom: 20px;
+}
 .swiper-pagination {
   padding: 5px !important;
 }
