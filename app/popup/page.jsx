@@ -11,7 +11,7 @@ export default function MainComponent() {
         onClick={() => setShowModal(true)}
         className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
       >
-        Show Pricing Popup
+        Pricing Popup
       </button>
 
       {showModal && <AutoPageRankModal onClose={() => setShowModal(false)} />}
